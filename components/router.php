@@ -41,6 +41,7 @@ class Router{
 				$params = $segments; 
 				//Узнаем имя файла контроллера
 				$fileName = ROOT.'/controllers/'.$nameController.'.php';
+				
 				//Если он существует, то подключаем
 				if(file_exists($fileName)){
 					require_once($fileName); 

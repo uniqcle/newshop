@@ -1,4 +1,5 @@
 <?php
+
 //Front controller
 
 //1. Общие настройки
@@ -10,8 +11,9 @@ define('ROOT', __DIR__);
 include (ROOT.'/components/router.php'); 
 
 //3. Подключение БД
-//include(ROOT.'/components/db.php'); 
+include(ROOT.'/components/db.php'); 
 
 //4. Вызов метода класса Router
 $router = new Router(); 
 $router -> run(); 
+ 

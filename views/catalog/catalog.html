@@ -1,7 +1,6 @@
 <?php include(ROOT.'/views/layouts/header.html'); ?>
  
-
-        <section>
+         <section>
             <div class="container">
                 <div class="row">
                     <div class="col-sm-3">
@@ -18,10 +17,7 @@
                            <?php foreach($productList as $productItem): ?>
                             <div class="col-sm-4">
                                 <div class="product-image-wrapper">  
-
                                     <div class="single-products">
-                                        
-
                                         <div class="productinfo text-center">
                                          <a href = "/product/<?php echo $productItem['id']; ?>">   
                                             <img src="/template/images/home/product1.jpg" alt="" />
@@ -29,20 +25,16 @@
                                          <h2>$<?php echo $productItem['price']; ?></h2>
                                             <p>
                                                 <a href = "/product/<?php echo $productItem['id']; ?>"> 
-                                                <?php echo $productItem['id']; ?> 
+                                                    <?php echo $productItem['id']; ?>
                                                 <?php echo $productItem['name']; ?>
                                                 </a>  
                                             </p>
                                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
-
-
                                         </div>
-
                                         <!-- Проверяем новый ли товар --> 
                                         <?php if($productItem['is_new']): ?>
                                             <img src = "/template/images/home/new.png" class = "new"> 
                                         <?php endif; ?>
-
                                     </div>
                                 </div>
                             </div>
@@ -50,7 +42,11 @@
 
                         </div><!--features_items-->
 
-                        <div class="recommended_items"><!--recommended_items-->
+                       <!--  <div class="recommended_items">
+
+                        recommended_items-->
+
+                        <!--
                             <h2 class="title text-center">Рекомендуемые товары</h2>
 
                             <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
@@ -141,7 +137,7 @@
                                     <i class="fa fa-angle-right"></i>
                                 </a>			
                             </div>
-                        </div><!--/recommended_items-->
+                        </div> --><!--/recommended_items-->
 
                     </div>
                 </div>

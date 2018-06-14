@@ -1,38 +1,19 @@
  
                             <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+                                
+                                <?php foreach($categoryList as $itemCategory):  ?>
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h4 class="panel-title"><a href="#">Категория</a></h4>
+                                        <h4 class="panel-title">
+                                        	<a href="/category/<?php echo $itemCategory['id']; ?>" 
+
+                                             class = "<?php if($categoryId == $itemCategory['id']) echo 'active'?>"
+                                                 >
+                                        		<? echo $itemCategory['name']; ?>
+                                        	</a>
+                                        </h4>
                                     </div>
                                 </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title"><a href="#">Категория</a></h4>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title"><a href="#">Категория</a></h4>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title"><a href="#">Категория</a></h4>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title"><a href="#">Категория</a></h4>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title"><a href="#">Категория</a></h4>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title"><a href="#">Категория</a></h4>
-                                    </div>
-                                </div>
+                                <?php endforeach; ?>
+                                
                             </div><!--/category-products-->
