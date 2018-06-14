@@ -117,6 +117,43 @@ class Product{
 	return $productItem; 
 	}
 
+	/*******************************************************
+	// Get Product Count in Category
+	********************************************************/	
+	public static function getProductCountInCatalog(){
+
+		$pdo = DB::getConnect(); 
+
+		$sql = "SELECT COUNT(id) as count FROM product WHERE status = 1"; 
+
+		$stmt = $pdo -> query($sql);
+
+		$productCount = $stmt -> fetch();
+
+	return $productCount['count']; 
+
+	}
+
+
+
+	/*******************************************************
+	// Get Product Count in Category
+	********************************************************/	
+
+	public static function getProductCountInCategory($categoryId){
+
+		$pdo = DB::getConnect(); 
+
+		$sql = "SELECT COUNT(id) AS count FROM product WHERE status = 1 AND category_id = ".$categoryId; 
+
+		$stmt = $pdo -> query($sql); 
+
+		$countProduct = $stmt -> fetch(); 
+
+	return $countProduct['count']; 
+	}
+
+
 
 
 }

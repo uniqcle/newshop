@@ -1,6 +1,7 @@
 <?php
 require_once(ROOT.'/models/category.php'); 
 require_once(ROOT.'/models/product.php');
+require_once(ROOT.'/components/Pagination.php'); 
 
 class CatalogController{
 
@@ -10,6 +11,10 @@ class CatalogController{
 
 		$productList = []; 
 		$productList = Product::getAllProduct($page); 
+
+		$productCount = Product::getProductCountInCatalog(); 
+
+		$pagination = new Pagination($productCount, $page, Product::SHOW_BY_DEFAULT, 'page-');
 
 		require_once(ROOT.'/views/catalog/catalog.html'); 
 
@@ -23,6 +28,10 @@ class CatalogController{
 
 		$productList = []; 
 		$productList = Product::getProductByCategoryId($categoryId, $page); 
+
+		$productCount = Product::getProductCountInCategory($categoryId); 
+
+		$pagination = new Pagination($productCount, $page, Product::SHOW_BY_DEFAULT, 'page-'); 
 
 		require_once(ROOT.'/views/catalog/catalog.html'); 
 
