@@ -13,6 +13,9 @@ return array(
 	"catalog/page-([0-9]+)" => "catalog/index/$1", 
 	"catalog" => "catalog/index", 
 
+	//
+	'user/register' => 'user/register', 
+
 	//Главная страница и навигация по главной
 	"page-([0-9]+)" => "site/index/$1",
 	"" => "site/index", 

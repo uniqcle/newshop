@@ -1,7 +1,4 @@
 <?php
-require_once(ROOT.'/models/category.php'); 
-require_once(ROOT.'/models/product.php');
-require_once(ROOT.'/components/Pagination.php'); 
 
 class CatalogController{
 

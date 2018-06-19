@@ -45,6 +45,41 @@ class Product{
 	}
 
 	/*******************************************************
+	// Get Last Products
+	********************************************************/
+	public static function getLastProduct($page = 1){
+
+		$pdo = DB::getConnect(); 
+
+		$offset = ($page - 1) * self::SHOW_BY_DEFAULT; 
+
+		$sql = "SELECT * FROM product WHERE status = 1 ORDER BY id DESC LIMIT ".self::SHOW_BY_DEFAULT." OFFSET ".$offset; 
+
+		$stmt = $pdo -> query($sql); 
+
+		$i = 0; 
+		$lastProduct = []; 
+
+		while($row = $stmt -> fetch()){
+
+			$lastProduct[$i]['id'] = $row['id'];
+			$lastProduct[$i]['name'] = $row['name'];
+			$lastProduct[$i]['category_id'] = $row['category_id'];
+			$lastProduct[$i]['code'] = $row['code'];
+			$lastProduct[$i]['price'] = $row['price'];
+			$lastProduct[$i]['availability'] = $row['availability'];
+			$lastProduct[$i]['brand'] = $row['brand'];
+			$lastProduct[$i]['image'] = $row['image'];
+			$lastProduct[$i]['description'] = $row['description'];
+			$lastProduct[$i]['is_new'] = $row['is_new'];
+			$lastProduct[$i]['is_recommended'] = $row['is_recommended']; 
+			$lastProduct[$i]['status'] = $row['status'];
+		$i++; 
+		}
+	return $lastProduct; 
+	}
+
+	/*******************************************************
 	// Get Product by Category ID
 	********************************************************/
 	public static function getProductByCategoryId($categoryId, $page = 1){
@@ -118,7 +153,7 @@ class Product{
 	}
 
 	/*******************************************************
-	// Get Product Count in Category
+	// Get Product Count in Catalog
 	********************************************************/	
 	public static function getProductCountInCatalog(){
 
@@ -139,7 +174,6 @@ class Product{
 	/*******************************************************
 	// Get Product Count in Category
 	********************************************************/	
-
 	public static function getProductCountInCategory($categoryId){
 
 		$pdo = DB::getConnect(); 

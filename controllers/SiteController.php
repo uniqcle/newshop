@@ -1,7 +1,4 @@
 <?php
-require_once(ROOT.'/models/Product.php'); 
-require_once(ROOT.'/models/Category.php');
-
 
 class SiteController{
 
@@ -11,7 +8,13 @@ class SiteController{
 		$categoryList = Category::getCategory();
 
 		$productList = []; 
-		$productList = Product::getAllProduct($page); 
+		$productList = Product::getLastProduct($page); 
+
+		//Кол-во продуктов. Необходим для класса Pagination
+		$productCount = Product::getProductCountInCatalog(); 
+
+		//Класс Pagination для формирования навигации
+		$pagination = new Pagination($productCount, $page, Product::SHOW_BY_DEFAULT, 'page-');
 
 		require_once(ROOT.'/views/site/index.html');
 

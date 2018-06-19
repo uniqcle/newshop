@@ -1,6 +1,4 @@
 <?php
-require_once(ROOT.'/models/Product.php'); 
-require_once(ROOT.'/models/Category.php'); 
 
 class ProductController{
 
