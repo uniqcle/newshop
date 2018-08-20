@@ -48,7 +48,89 @@
         /*******************************************************
         // Controller actionCheckout(). Оформление заказа
         ********************************************************/
-        
+        public function actionCheckout(){
+            //Выводит список категорий
+            $categoryList = []; 
+            $categoryList = Category::getCategory(); 
+
+            //Статус успешного оформления заказа
+            $result = false; 
+
+            $userName = ''; 
+
+            //Форма отправлена?
+            if(isset($_POST['submit'])){ //Форма отправлена? - ДА
+                $userName = $_POST['name']; 
+                $userPhone = $_POST['phone']; 
+                $userComment = $_POST['comment']; 
+
+                $errors = false; 
+                
+                //Валидация форм
+                if(!User::checkName($userName)){
+                    $errors[] = 'Имя пользьвателя меньше 6 символов'; 
+                }
+
+                //Если ошибок нет. Сохраняем пользователя и заказ в Orders
+                if($errors == false){
+
+                    if(User::isGuest()){ //Пользователь залогинен? - Да
+                       $userId = false;  
+                    } else {
+                        $userId = User::checkLogged(); 
+                    }
+                    //Получаем данные о заказе
+                    $productInCart = Cart::getProductInCart(); 
+                   
+                    $countItems = Cart::countItemsInCart(); 
+                    //$totalPrice = Cart::totalPrice($products); 
+                    //Сохраняем заказ
+                    $result = Order::save($userName, $userPhone, $userComment, $userId, $productInCart); 
+
+                    if($result){
+                        $to = 'uniqcle@yandex.ru'; 
+                        $subject = 'New Order'; 
+                        $message = '/admin/orders'; 
+                        mail($to, $subject, $message); 
+                    }
+                    //Очищаем корзину
+                    Cart::clear();
+
+                }
+
+
+            } else { //Форма отправлена? - НЕТ
+                $productsInCart = Cart::getProductInCart(); 
+               
+                //В корзине есть товары?
+                if($productsInCart){  //В корзине есть товары? - Да
+                    //Подводим предварительный итог (кол-во, сумма)
+                    $productIds = array_keys($productsInCart);
+                    $products = Product::getProductByIds($productIds); 
+                    $countItems = Cart::countItemsInCart(); 
+                    $totalPrice = Cart::totalPrice($products); 
+
+                        //Пользователь залогинен? 
+                        if(!User::isGuest()){ //Пользователь залогинен? - Да
+                            //Получаем данные пользователя (id, name)
+                            $userId = User::checkLogged(); 
+                            $user = User::getUserById($userId); 
+                            $userName = $user['name']; 
+
+                        } else { //Пользователь залогинен? - нет
+                            //ничего не делаем
+                        }
+
+                } else { //В корзине есть товары? - Нет
+                    header("Location: /"); 
+                }
+
+                
+
+            }
+        require_once(ROOT.'/views/cart/checkout.php'); 
+        return true; 
+        }
 
 
 } 
