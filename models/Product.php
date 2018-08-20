@@ -1,6 +1,7 @@
 <?php
 
-class Product{
+class Product
+{
 
 	const SHOW_BY_DEFAULT = 6; 
 
@@ -43,6 +44,7 @@ class Product{
 
 	return $productList; 
 	}
+
 
 	/*******************************************************
 	// Get Last Products
@@ -187,7 +189,30 @@ class Product{
 	return $countProduct['count']; 
 	}
 
+	/*******************************************************
+	// Get product items by Id's
+	********************************************************/
+	public static function getProductByIds($productIds){
 
+		$productIds = implode(',', $productIds);
 
+		$product = []; 
+
+		$pdo = DB::getConnect(); 
+
+		$sql = "SELECT * FROM product WHERE status = 1 AND id IN ($productIds)"; 
+
+		$stmt = $pdo -> query($sql); 
+
+		$i = 0; 
+		while ($row = $stmt -> fetch()) {
+		 	$product[$i]['id'] = $row['id']; 
+		 	$product[$i]['name'] = $row['name'];
+		 	$product[$i]['code'] = $row['code'];
+		 	$product[$i]['price'] = $row['price'];
+		 $i++; 
+		 } 
+	return $product; 
+	}
 
 }

@@ -4,40 +4,39 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4 col-sm-offset-4 padding-right">
-                   
+ 
 
-                   <?php 
-
-                   if($result){
-                        echo 'Вы успешно зарегестрированы'; 
-                   }
-
-                   else {
-                        if(isset($errors) && is_array($errors)){
-                        foreach($errors as $error):
-                            echo '- '.$error.'<br>'; 
-                        endforeach; 
-                    }
-                 
-                   ?>
-                       <div class = "signup-form">
+  <div class = "signup-form">
                             <h2>Форма регистрации</h2>
 
+<?php
+if($regResult){
+  echo 'Вы успешно зарегестрированы'; 
+  
+}
+else{
+  if(isset($errors) && is_array($errors)){
+    foreach($errors as $error):
+      echo '- '.$error.'<br>'; 
+    endforeach; 
+}
+}
+
+?>
                             <form action = "#" method = "POST">
-                                <input type = "text" name = "name" placeholder="Имя" value = "<?php echo $name; ?>">
-                                <input type = "email" name = "email" placeholder="email" value = "<?php echo $email; ?>">
-                                <input type = "password" name = "password" placeholder="password" value = "<?php echo $password; ?>">
-                                <input type = "submit" name = "submit" value = "Регистрация">
+                                <input type = "text" name = "name" placeholder="Имя" value = "<?=$name;?>">
+                                <input type = "email" name = "email" placeholder="email" value = "<?=$email;?>">
+                                <input type = "password" name = "password" placeholder="password" value = "<?=$password;?>">
+                                <input type = "submit" name = "submit" class = "btn btn-default" value = "Регистрация">
                                 
                             </form>
                          
                        </div>
-                    <?php  } ?>
-
+ 
                     </div>
                 </div>
             </div>
         </section>
 
   
-        <?php include(ROOT.'/views/layouts/footer.html'); ?>
+<?php include(ROOT.'/views/layouts/footer.html'); ?>

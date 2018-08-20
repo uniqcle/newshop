@@ -1,0 +1,22 @@
+<?php include(ROOT.'../views/layouts/header.html'); ?>
+ 
+        <section>
+            <div class="container">
+                <div class="row">
+                   
+                   
+                    <h3>Кабинет пользователя</h3>
+                    <h4>Привет, <?php echo $user['name']; ?> </h4>
+                    <ul>
+                      <li><a href = "edit">Редактирование данных</a></li>
+                      <li><a href = "history">История покупок</a></li>
+                    </ul>
+                    
+
+                     
+                </div>
+            </div>
+        </section>
+
+  
+        <?php include(ROOT.'/views/layouts/footer.html'); ?>

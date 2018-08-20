@@ -3,8 +3,8 @@
             <div class="footer-bottom">
                 <div class="container">
                     <div class="row">
-                        <p class="pull-left">Copyright © 2015</p>
-                        <p class="pull-right">Курс PHP Start</p>
+                        <p class="pull-left">Copyright © 2018</p>
+                        <p class="pull-right">Интернет магазин Анучкина Андрея</p>
                     </div>
                 </div>
             </div>
@@ -18,5 +18,18 @@
         <script src="../template/js/price-range.js"></script>
         <script src="../template/js/jquery.prettyPhoto.js"></script>
         <script src="../template/js/main.js"></script>
+        <!--Скрипт добавления товаров в корзину --> 
+        <script>
+            $(function(){
+                $("add-to-cart").click(function(){
+                    var id = $(this).attr("data-id"); 
+
+                    $.post("cart/addajax/"+id, {}, function(data){
+                        $("cart-count").html(data);
+                    }); 
+
+                }); 
+            }); 
+        </script>
     </body>
 </html>

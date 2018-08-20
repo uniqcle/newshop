@@ -2525,4 +2525,15 @@ h2.title {
   color: #FE980F;
 }
 
+.close1{
+  text-align: right;
+}
 
+#checkout{
+  margin-bottom: 10px;
+}
+
+.btn-checkout{
+  background-color: #FE980F;
+  color: white;
+}

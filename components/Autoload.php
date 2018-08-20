@@ -1,18 +1,17 @@
 <?php 
 
-function __autoload($className){
+function __autoload($nameClass){
 
-	$arrayPaths = [
-		'/models/', 
-		'/components/'
+	$classArray = [
+		"/components/", 
+		"/models/"
 	]; 
 
-	foreach($arrayPaths as $Item):
-		$path = ROOT.$Item.$className.'.php';
+	foreach($classArray as $item):
+		$path = ROOT.$item.$nameClass.'.php'; 
 
 		if(is_file($path)){
-			require_once($path); 
-		} 
-
+			require_once $path; 
+		}
 	endforeach; 
 }
