@@ -30,16 +30,23 @@
         ********************************************************/
         public function actionIndex(){
 
+            $fullCart = false; 
+
             //Выводит список категорий
             $categoryList = Category::getCategory(); 
             //Выводит массив товаров, кот. в $_SESSION
             $productsInCart = Cart::getProductInCart(); 
+
+            if($productsInCart){
+            $fullCart = true; 
+
             //Получаем id's товаров
             $productIds = array_keys($productsInCart);
             //по id's получаем полную инфо. о товаре
             $products = Product::getProductByIds($productIds);
             //Подбиваем общий итог
             $totalPrice = Cart::totalPrice($products); 
+            }
  
             require_once(ROOT.'/views/cart/index.html'); 
         return true; 
@@ -131,7 +138,16 @@
         require_once(ROOT.'/views/cart/checkout.php'); 
         return true; 
         }
+/*******************************************************
+// actionDelete Удаление товара из корзины
+********************************************************/
+public function actionDelete($id){
 
+    Cart::deleteProduct($id); 
+
+    header("Location: /cart"); 
+ 
+}
 
 } 
 

@@ -47,13 +47,12 @@ public function actionEdit(){
 		if($errors == false){
 			$editResult = User::editUser($userId, $name, $password); 
 		}
-
-
 	}
-
 require_once(ROOT.'/views/cabinet/edit.html'); 
 return true; 
 }
+
+
 }
 
  

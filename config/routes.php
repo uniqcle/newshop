@@ -20,6 +20,9 @@ return array(
 	//Оформление товаров в корзину
 	"cart/checkout" => "cart/checkout", 
 
+	//Удаление товара
+	"cart/delete/([0-9]+)" => "cart/delete/$1",
+
 	//Корзина
 	"cart" => "cart/index",
 
@@ -35,6 +38,9 @@ return array(
 	//Главная страница и навигация по главной
 	"page-([0-9]+)" => "site/index/$1",
 	"" => "site/index", 
+
+	//Админ-панель
+	"admin" => "admin/index", 
 
 
 

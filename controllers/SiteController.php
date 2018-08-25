@@ -13,6 +13,9 @@ class SiteController{
 		//Кол-во продуктов. Необходим для класса Pagination
 		$productCount = Product::getProductCountInCatalog(); 
 
+		//Слайды
+		$sliderProducts = Product::getRecommendedProducts();
+
 		//Класс Pagination для формирования навигации
 		$pagination = new Pagination($productCount, $page, Product::SHOW_BY_DEFAULT, 'page-');
 

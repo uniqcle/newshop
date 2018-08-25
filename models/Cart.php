@@ -59,7 +59,7 @@
 		}
 
 		/*******************************************************
-		// Получаем массив заказов
+		// Получаем сумму заказов
 		********************************************************/
 		public static function totalPrice($products){
 
@@ -81,6 +81,18 @@
 			if(isset($_SESSION['products'])){
 				unset($_SESSION['products']); 
 			}
+		}
+
+		/*******************************************************
+		// Удаление товара из корзины
+		********************************************************/
+		public static function deleteProduct($id){
+			
+			$productInCart = self::getProductInCart(); 
+
+			unset($productInCart[$id]); 
+
+			$_SESSION['products']  = $productInCart; 
 		}
 
  

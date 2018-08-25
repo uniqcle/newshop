@@ -215,4 +215,28 @@ class Product
 	return $product; 
 	}
 
+	/*******************************************************
+	// Список товаров для слайдера
+	********************************************************/
+	public static function  getRecommendedProducts(){
+		
+		$pdo = DB::getConnect(); 
+
+		$productList = []; 
+
+		$sql = "SELECT id, name, price, is_new FROM product"; 
+
+		$stmt = $pdo -> query($sql); 
+
+		$i = 0; 
+		while($row = $stmt -> fetch()){
+			$productList[$i]['id'] = $row['id']; 
+			$productList[$i]['name'] = $row['name']; 
+			$productList[$i]['price'] = $row['price']; 
+			$productList[$i]['is_new'] = $row['is_new']; 
+		$i++; 
+		}
+    return $productList; 
+	}
+
 }
