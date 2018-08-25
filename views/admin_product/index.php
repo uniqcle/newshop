@@ -3,22 +3,79 @@
 ?>
 
 <section>
-  <div class="container">
-    <div class="row">
+    <div class="container">
+          <!-- Хлебные крошки --> 
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/admin">Управление</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Управление товарами</li>
+          </ol>
+       
+   <div class="row">
+   <div class="col-sm-12">
+     <a href = "/admin/product/create" class = "btn btn-success btn-sm">Добавить товар</a></br></br> 
+   </div>
+
     <div class="col-sm-12">
-      <h4>Привет, Администратор</h4>
-          <p>
-      Вам доступны следующие возможности: </br>
-    </p>
-    </div>
+       <div>
+          <table class = "table-borderd table-sm table-hover table-striped table">
+          <caption>Список товаров</caption>
+                             
+                                     <thead>
+                                         <tr>
+                                             <th>Код товара</th>
+                                             <th>Артикул</th>
+                                             <th>Название товара</th>
+                                             <th>Цена</th>
+                                             <th></th>
+                                             <th></th>
+                                         </tr>
+                                     </thead>
+                                     <tbody>
+                                  
+                                         <tr>
+                                          <td>45</td>
+                                             <td>4323423</td>
+                                             <td><a href = "#"> Компьютер Everest Game </a></td>
+                                             <td>43.32</td>
+                                             <td><a href = "#"><i class="far fa-edit"></i></a></td>
+                                             <td><a href = "#"><i class="far fa-trash-alt"></i></a></td>
+                                         </tr>
+
+                                                                                  <tr>
+                                          <td>45</td>
+                                             <td>4323423</td>
+                                             <td><a href = "#"> Компьютер Everest Game </a></td>
+                                             <td>43.32</td>
+                                             <td><a href = "#"><i class="far fa-edit"></i></a></td>
+                                             <td><a href = "#"><i class="far fa-trash-alt"></i></a></td>
+                                         </tr>
+
+                                                                                  <tr>
+                                          <td>45</td>
+                                             <td>4323423</td>
+                                             <td><a href = "#"> Компьютер Everest Game </a></td>
+                                             <td>43.32</td>
+                                             <td><a href = "#"><i class="far fa-edit"></i></a></td>
+                                             <td><a href = "#"><i class="far fa-trash-alt"></i></a></td>
+                                         </tr>
 
 
-    <div class="col-sm">
-      <ul>
-        <li><a href = "/admin/orders">Управление заказами</a></li>
-        <li><a href = "/admin/product">Управление товарами</a></li>
-        <li><a href = "/admin/category">Управление категориями</a></li>
-      </ul>
+                                                                                  <tr>
+                                          <td>45</td>
+                                             <td>4323423</td>
+                                             <td><a href = "#"> Компьютер Everest Game </a></td>
+                                             <td>43.32</td>
+                                             <td><a href = "#"><i class="far fa-edit"></i></a></td>
+                                             <td><a href = "#"><i class="far fa-trash-alt"></i></a></td>
+                                         </tr>
+                                
+                                    </tbody>
+                            </table>
+
+
+
+        </div>
+      
     </div>
   </div>
 </section>

@@ -35,12 +35,23 @@ return array(
 	"cabinet/edit" => "cabinet/edit", 
 	"cabinet" => "cabinet/index",
 
+		//Управление товарами
+	"admin/product" => "adminProduct/index",
+	"admin/product/create" => "adminProduct/create",
+	"admin/product/update/([0-9]+)" => "adminProduct/update/$1", 
+	"admin/product/delete/([0-9]+)" => "adminProduct/delete/$1", 
+
+	//Админ-панель
+	"admin" => "admin/index", 
+
 	//Главная страница и навигация по главной
 	"page-([0-9]+)" => "site/index/$1",
 	"" => "site/index", 
 
-	//Админ-панель
-	"admin" => "admin/index", 
+
+	 
+
+
 
 
 
