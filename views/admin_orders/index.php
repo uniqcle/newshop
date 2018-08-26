@@ -6,15 +6,12 @@ require_once(ROOT.'/views/layouts/header_admin.php');
   <div class="container">
     <!-- Хлебные крошки --> 
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="/admin">Управление</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Управление категориями</li>
+      <li class="breadcrumb-item"><a href="/admin">Админ.панель</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Управление заказами</li>
     </ol>
     
     <div class="row">
-     <div class="col-sm-12">
-       <a href = "/admin/category/create" class = "btn btn-success btn-sm">Добавить категорию</a></br></br> 
-     </div>
-
+     
      <div class="col-sm-12">
        <div>
         <table class = "table-borderd table-sm table-hover table-striped table">
@@ -22,47 +19,65 @@ require_once(ROOT.'/views/layouts/header_admin.php');
           
           <thead>
             <tr>
-              <th>ID категории</th>
-              <th>Название категории</th>
-              <th>Порядковый номер</th>
+              <th>ID заказа</th>
+              <th>Имя покупателя</th>
+              <th>Телефон покупателя</th>
+              <th>Дата оформления</th>
               <th>Статус</th>
+              <th></th>
               <th></th>
               <th></th>
             </tr>
           </thead>
           <tbody>
-            
+
             <tr>
-              <td>4</td>
-              <td>Ноутбуки</td>
-              <td>1</td>
-              <td>Отображается</td>
-              <td><a href = "#"><i class="far fa-edit"></i></a></td>
-              <td><a href = "#"><i class="far fa-trash-alt"></i></a></td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Ноутбуки</td>
-              <td>1</td>
-              <td>Отображается</td>
+              <td>45</td>
+              <td>Анучкин Андрей</td>
+              <td>8 913481232</td>
+              <td>26.08.2018</td>
+              <td>Новый</td>
+              <td><a href = "#"><i class="far fa-eye"></i></a></td>
               <td><a href = "#"><i class="far fa-edit"></i></a></td>
               <td><a href = "#"><i class="far fa-trash-alt"></i></a></td>
             </tr>
 
             <tr>
-              <td>4</td>
-              <td>Ноутбуки</td>
-              <td>1</td>
-              <td>Отображается</td>
+              <td>45</td>
+              <td>Анучкин Андрей</td>
+              <td>8 913481232</td>
+              <td>26.08.2018</td>
+              <td>Новый</td>
+              <td><a href = "#"><i class="far fa-eye"></i></a></td>
               <td><a href = "#"><i class="far fa-edit"></i></a></td>
               <td><a href = "#"><i class="far fa-trash-alt"></i></a></td>
             </tr>
 
-            
+            <tr>
+              <td>45</td>
+              <td>Анучкин Андрей</td>
+              <td>8 913481232</td>
+              <td>26.08.2018</td>
+              <td>Новый</td>
+              <td><a href = "#"><i class="far fa-eye"></i></a></td>
+              <td><a href = "#"><i class="far fa-edit"></i></a></td>
+              <td><a href = "#"><i class="far fa-trash-alt"></i></a></td>
+            </tr>
+
+
+            <tr>
+              <td>45</td>
+              <td>Анучкин Андрей</td>
+              <td>8 913481232</td>
+              <td>26.08.2018</td>
+              <td>Новый</td>
+              <td><a href = "#"><i class="far fa-eye"></i></a></td>
+              <td><a href = "#"><i class="far fa-edit"></i></a></td>
+              <td><a href = "#"><i class="far fa-trash-alt"></i></a></td>
+            </tr>
+
           </tbody>
         </table>
-
-
 
     </div>
     

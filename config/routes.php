@@ -48,8 +48,8 @@
 	"admin/category/delete"           => "adminCategory/delete",   
 	
 	//Управление заказами в админке
-	"admin/orders"              => "adminOrders/index",
-	"admin/orders/create"             => "adminOrders/create",
+	"admin/orders"                    => "adminOrders/index",
+	"admin/orders/view"      => "adminOrders/view", 
 	"admin/orders/update"             => "adminOrders/update",
 	"admin/orders/delete"             => "adminOrders/delete",    
 	

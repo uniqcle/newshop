@@ -43,7 +43,7 @@
       </li>
 
        <li class="nav-item">
-        <a class="nav-link" href="/admin">Админ панель</a>
+        <a class="nav-link" href="/admin">Выход</a>
       </li>
 
     </ul>
