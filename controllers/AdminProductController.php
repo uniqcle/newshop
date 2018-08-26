@@ -4,9 +4,8 @@ class AdminProductController
 
 	public function actionIndex(){
 
-
 		require_once(ROOT.'/views/admin_product/index.php'); 
-	return true; 
+		return true; 
 	}
 
 	public function actionCreate(){
@@ -16,10 +15,9 @@ class AdminProductController
 		$categoryList = Category::getCategory(); 
 
 		require_once(ROOT.'/views/admin_product/create.php'); 
-	return true; 
+		return true; 
 	}
 
- 
 }
 
 
