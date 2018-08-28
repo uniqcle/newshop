@@ -224,7 +224,7 @@ class Product
 
 		$productList = []; 
 
-		$sql = "SELECT id, name, price, is_new FROM product"; 
+		$sql = "SELECT id, name, price, is_new FROM product WHERE status =1 AND is_recommended = 1"; 
 
 		$stmt = $pdo -> query($sql); 
 

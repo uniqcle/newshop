@@ -1,6 +1,5 @@
 <?php 
-    class CartController
-    {
+    class CartController{
 
         /*******************************************************
         // Controller actionAdd() Добавление товара в корзину синхронным методом
@@ -10,7 +9,8 @@
             Cart::addProductToCart($id); 
 
             $refer = $_SERVER['HTTP_REFERER'];
-            header("Location: $refer");  
+           
+            header("Location:$refer");  
 
         return true;  
         }

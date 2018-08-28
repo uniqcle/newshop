@@ -29,7 +29,7 @@
     </ul>
     
     <!--Правая сторона --> 
-    <ul class="nav   justify-content-end">
+    <ul class="nav justify-content-end">
      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Управление
@@ -43,7 +43,7 @@
       </li>
 
        <li class="nav-item">
-        <a class="nav-link" href="/admin">Выход</a>
+        <a class="nav-link" href="/admin/logout">Выход</a>
       </li>
 
     </ul>
