@@ -25,20 +25,21 @@ class AdminController extends AdminBase
  			$errors[] = 'Пользователя с таким email не существует'; 
  		}
 
- 		$userId = User::checkUserData($email, $password);
+ 		$userId = User::checkUserData($email, $password); 
 
  		$user = User::getUserById($userId); 
 
- 		if($user['role'] == 'admin'){
+ 		if($user['role'] == 'admin') {
 
- 				User::auth($userId);
+ 			User::auth($userId);
 
-				header('Location: /admin/cabinet/');
+ 			header('Location: /admin/cabinet/');
 
- 		} else {
+ 		}  else {
+
  			$errors[] = 'Неправильные данные для входа на сайт'; 
- 		}
 
+ 		}
 
  	}
 
@@ -49,7 +50,7 @@ class AdminController extends AdminBase
 	}
 
 	/*******************************************************
-	// 
+	// Админ панель
 	********************************************************/
 	public function actionCabinet(){
 
@@ -57,7 +58,7 @@ class AdminController extends AdminBase
 
  	    $user = User::getUserById($userId); 
 
- 	    if($user['role'] = 'admin'){
+ 	    if(self::checkAdmin()){
 
  	    	require_once(ROOT.'/views/admin/index.php'); 
 
@@ -71,7 +72,7 @@ class AdminController extends AdminBase
 	}
 
 	/*******************************************************
-	// 
+	// Выход администратора с админ. панели
 	********************************************************/
 	public function actionLogout(){
 

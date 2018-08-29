@@ -239,4 +239,52 @@ class Product
     return $productList; 
 	}
 
+	/*******************************************************
+	// Получение товаров для админки. 
+	********************************************************/
+	public static function getProductsForAdmin(){
+
+		$productList = []; 
+
+		$pdo = DB::getConnect(); 
+
+		$sql = "SELECT * FROM product"; 
+
+		$stmt = $pdo -> query($sql); 
+
+		$resut = $stmt -> fetch(); 
+
+		$i = 0; 
+		while($row = $stmt -> fetch()){
+			$productList[$i]['id'] = $row['id'];
+			$productList[$i]['name'] = $row['name'];
+			$productList[$i]['category_id'] = $row['category_id'];
+			$productList[$i]['code'] = $row['code'];
+			$productList[$i]['price'] = $row['price'];
+			$productList[$i]['availability'] = $row['availability'];
+			$productList[$i]['brand'] = $row['brand'];
+			$productList[$i]['image'] = $row['image'];
+			$productList[$i]['description'] = $row['description'];
+			$productList[$i]['is_new'] = $row['is_new'];
+			$productList[$i]['is_recommended'] = $row['is_recommended']; 
+			$productList[$i]['status'] = $row['status'];
+		$i++; 
+		}
+	return $productList; 
+	}
+
+	/*******************************************************
+	// Удаление товара из админки
+	********************************************************/
+	public static function deleteProductById($id){
+
+		$pdo = DB::getConnect(); 
+
+		$sql = "DELETE FROM product WHERE id = :id"; 
+
+		$stmt = $pdo -> prepare($sql); 
+
+		return $stmt -> execute(array("id" => $id));  
+	}
+
 }

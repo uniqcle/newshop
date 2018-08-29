@@ -42,9 +42,13 @@
           <div class="form-group">
             <label for="categoryProduct">Категория</label>
             <select name = "category_id" class="form-control form-control-sm" id="categoryProduct">
+            <?php if(is_array($categoryList)){ ?>
               <?php foreach($categoryList as $item): ?>
               <option value = "<?php echo $item['id']; ?>"><?php echo $item['name']; ?></option>
             <?php endforeach; ?>
+
+            <?php } ?> 
+
             </select>
           </div>
 
