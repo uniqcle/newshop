@@ -102,7 +102,7 @@ class User
 			return $_SESSION['userId']; 
 		}
 
-	header('Location: /user/login'); 
+	header('Location:/user/login'); 
 	}
 
 /*******************************************************

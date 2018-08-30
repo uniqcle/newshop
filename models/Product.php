@@ -274,10 +274,36 @@ class Product
 	}
 
 	/*******************************************************
-	// 
+	// createProductForAdmin($options) Модель добавления товара в админке
 	********************************************************/
 	public static function createProductForAdmin($options){
-		
+
+		$pdo = DB::getConnect(); 
+
+		$sql = "INSERT INTO product (name, category_id, code, price, availability, brand, description, is_new, is_recommended, status) VALUES (:name, :category_id, :code, :price, :availability, :brand, :description, :is_new, :is_recommended, :status)"; 
+
+		$stmt = $pdo -> prepare($sql); 
+
+		$result = $stmt -> execute(array(
+			"name"           => $options['name'],
+			"category_id"    => $options['category_id'],
+			"code"           => $options['code'],
+			"price"          => $options['price'],
+			"availability"   => $options['availability'],
+			"brand"          => $options['brand'],
+			"description"    => $options['description'],
+			"is_new"         => $options['is_new'],
+			"is_recommended" => $options['is_recommended'],
+			"status" => $options['status'],
+
+		)); 
+
+		if($result){
+			return $pdo -> lastInsertId(); 
+		} 
+
+		return 0; 
+
 	}
 
 	/*******************************************************

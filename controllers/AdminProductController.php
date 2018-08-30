@@ -19,6 +19,8 @@ class AdminProductController extends AdminBase
 	********************************************************/
 	public function actionCreate(){
 
+		self::checkAdmin();
+
 		$categoryList = []; 
 
 		//Списко категорий для выпадающего списка
@@ -37,14 +39,14 @@ class AdminProductController extends AdminBase
 			$options['description']    = $_POST['description'];
 			$options['status']         = $_POST['status'];
 
-			$errors = false; 
+ 		$errors = false; 
 
 			//Валидация полей. В данном случае только 1 поле
 			if(!isset($options['name']) || empty($options['name'])){
 				$errors[] = "Заполните поле 'Название товара'";
-			}
+			} 
 
-			$id = Product::createProduct($options); 
+			$id = Product::createProductForAdmin($options); 
 
 			header("Location: /admin/product"); 		
 
@@ -54,6 +56,8 @@ class AdminProductController extends AdminBase
 		require_once(ROOT.'/views/admin_product/create.php'); 
 		return true; 
 	}
+
+	
 
 	/*******************************************************
 	// Удаление товара из админки

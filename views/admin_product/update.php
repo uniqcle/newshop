@@ -15,7 +15,7 @@
 
     <div class="row">
      <div class="col-sm-12">
-       <h5>Добавить новый товар</h5>
+       <h5>Редактировать товар</h5>
    </div>
 
     <div class="col-sm-12">

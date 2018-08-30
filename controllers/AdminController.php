@@ -10,43 +10,23 @@ class AdminController extends AdminBase
 	// Action для стартовой страницы админ.панели
 	********************************************************/
 	public function actionIndex(){
+        // Проверка доступа
+        if(isset($_POST['submit'])){
 
- 	$email = ''; 
- 	$password = ''; 
+        	$email = $_POST['email'];
+        	$password = $_POST['password'];  
 
- 	if(isset($_POST['submit'])){
+        	$userId = User::checkUserData($email, $password); 
 
- 		$email = $_POST['email']; 
- 		$password = $_POST['password']; 
+        	$_SESSION['userId'] = $userId; 
 
- 		$errors = false; 
+        	header("Location:/admin/cabinet"); 
+        }
 
- 		if(!User::checkExistedEmail($email)){
- 			$errors[] = 'Пользователя с таким email не существует'; 
- 		}
+        // Подключаем вид
+        require_once(ROOT.'/views/admin/adminlogin.php');
 
- 		$userId = User::checkUserData($email, $password); 
-
- 		$user = User::getUserById($userId); 
-
- 		if($user['role'] == 'admin') {
-
- 			User::auth($userId);
-
- 			header('Location: /admin/cabinet/');
-
- 		}  else {
-
- 			$errors[] = 'Неправильные данные для входа на сайт'; 
-
- 		}
-
- 	}
-
-    require_once(ROOT.'/views/admin/adminlogin.php'); 
- 
-		
-	return true; 
+    return true;
 	}
 
 	/*******************************************************

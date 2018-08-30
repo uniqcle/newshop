@@ -7,19 +7,11 @@
                     
                        <div class = "signup-form">
                             <h2>Вход в админ панель</h2>
-<?php
-if(isset($errors) && is_array($errors)){
-    foreach($errors as $error):
-        echo '- '.$error.'<br>'; 
-    endforeach; 
-}
-
-?>
 
                             <form action = "#" method = "POST">
                                  
-                                <input type = "email" name = "email" placeholder="demo@demo.ru" value = "<?=$email; ?>">
-                                <input type = "password" name = "password" placeholder="demo" value = "<?=$password; ?>">
+                                <input type = "email" name = "email" placeholder="demo@demo.ru" value = "">
+                                <input type = "password" name = "password" placeholder="demo" value = "">
                                 <input type = "submit" name = "submit" value = "Вход">
                                 
                             </form>
