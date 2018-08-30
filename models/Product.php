@@ -26,18 +26,18 @@ class Product
 
 		while($row = $stmt -> fetch()):
 
-			$productList[$i]['id'] = $row['id'];
-			$productList[$i]['name'] = $row['name'];
-			$productList[$i]['category_id'] = $row['category_id'];
-			$productList[$i]['code'] = $row['code'];
-			$productList[$i]['price'] = $row['price'];
-			$productList[$i]['availability'] = $row['availability'];
-			$productList[$i]['brand'] = $row['brand'];
-			$productList[$i]['image'] = $row['image'];
-			$productList[$i]['description'] = $row['description'];
-			$productList[$i]['is_new'] = $row['is_new'];
+			$productList[$i]['id']             = $row['id'];
+			$productList[$i]['name']           = $row['name'];
+			$productList[$i]['category_id']    = $row['category_id'];
+			$productList[$i]['code']           = $row['code'];
+			$productList[$i]['price']          = $row['price'];
+			$productList[$i]['availability']   = $row['availability'];
+			$productList[$i]['brand']          = $row['brand'];
+			$productList[$i]['image']          = $row['image'];
+			$productList[$i]['description']    = $row['description'];
+			$productList[$i]['is_new']         = $row['is_new'];
 			$productList[$i]['is_recommended'] = $row['is_recommended']; 
-			$productList[$i]['status'] = $row['status'];
+			$productList[$i]['status']         = $row['status'];
 
 			$i++; 
 		endwhile; 
@@ -64,18 +64,18 @@ class Product
 
 		while($row = $stmt -> fetch()){
 
-			$lastProduct[$i]['id'] = $row['id'];
-			$lastProduct[$i]['name'] = $row['name'];
-			$lastProduct[$i]['category_id'] = $row['category_id'];
-			$lastProduct[$i]['code'] = $row['code'];
-			$lastProduct[$i]['price'] = $row['price'];
-			$lastProduct[$i]['availability'] = $row['availability'];
-			$lastProduct[$i]['brand'] = $row['brand'];
-			$lastProduct[$i]['image'] = $row['image'];
-			$lastProduct[$i]['description'] = $row['description'];
-			$lastProduct[$i]['is_new'] = $row['is_new'];
+			$lastProduct[$i]['id']             = $row['id'];
+			$lastProduct[$i]['name']           = $row['name'];
+			$lastProduct[$i]['category_id']    = $row['category_id'];
+			$lastProduct[$i]['code']           = $row['code'];
+			$lastProduct[$i]['price']          = $row['price'];
+			$lastProduct[$i]['availability']   = $row['availability'];
+			$lastProduct[$i]['brand']          = $row['brand'];
+			$lastProduct[$i]['image']          = $row['image'];
+			$lastProduct[$i]['description']    = $row['description'];
+			$lastProduct[$i]['is_new']         = $row['is_new'];
 			$lastProduct[$i]['is_recommended'] = $row['is_recommended']; 
-			$lastProduct[$i]['status'] = $row['status'];
+			$lastProduct[$i]['status']         = $row['status'];
 		$i++; 
 		}
 	return $lastProduct; 
@@ -103,19 +103,19 @@ class Product
 			$productList = []; 
 			$i = 0; 
 			while($row = $stmt -> fetch()){
-
-			$productList[$i]['id'] = $row['id'];
-			$productList[$i]['name'] = $row['name'];
-			$productList[$i]['category_id'] = $row['category_id'];
-			$productList[$i]['code'] = $row['code'];
-			$productList[$i]['price'] = $row['price'];
-			$productList[$i]['availability'] = $row['availability'];
-			$productList[$i]['brand'] = $row['brand'];
-			$productList[$i]['image'] = $row['image'];
-			$productList[$i]['description'] = $row['description'];
-			$productList[$i]['is_new'] = $row['is_new'];
+			
+			$productList[$i]['id']             = $row['id'];
+			$productList[$i]['name']           = $row['name'];
+			$productList[$i]['category_id']    = $row['category_id'];
+			$productList[$i]['code']           = $row['code'];
+			$productList[$i]['price']          = $row['price'];
+			$productList[$i]['availability']   = $row['availability'];
+			$productList[$i]['brand']          = $row['brand'];
+			$productList[$i]['image']          = $row['image'];
+			$productList[$i]['description']    = $row['description'];
+			$productList[$i]['is_new']         = $row['is_new'];
 			$productList[$i]['is_recommended'] = $row['is_recommended']; 
-			$productList[$i]['status'] = $row['status'];
+			$productList[$i]['status']         = $row['status'];
 
 			$i ++; 
 			}
@@ -137,18 +137,18 @@ class Product
 		$stmt = $pdo -> query($sql); 
 
 		while($row = $stmt -> fetch()):
-			$productItem['id'] = $row['id'];
-			$productItem['name'] = $row['name'];
-			$productItem['category_id'] = $row['category_id'];
-			$productItem['code'] = $row['code'];
-			$productItem['price'] = $row['price'];
-			$productItem['availability'] = $row['availability'];
-			$productItem['brand'] = $row['brand'];
-			$productItem['image'] = $row['image'];
-			$productItem['description'] = $row['description'];
-			$productItem['is_new'] = $row['is_new'];
+			$productItem['id']             = $row['id'];
+			$productItem['name']           = $row['name'];
+			$productItem['category_id']    = $row['category_id'];
+			$productItem['code']           = $row['code'];
+			$productItem['price']          = $row['price'];
+			$productItem['availability']   = $row['availability'];
+			$productItem['brand']          = $row['brand'];
+			$productItem['image']          = $row['image'];
+			$productItem['description']    = $row['description'];
+			$productItem['is_new']         = $row['is_new'];
 			$productItem['is_recommended'] = $row['is_recommended']; 
-			$productItem['status'] = $row['status'];
+			$productItem['status']         = $row['status'];
 		endwhile; 
 
 	return $productItem; 
@@ -206,10 +206,10 @@ class Product
 
 		$i = 0; 
 		while ($row = $stmt -> fetch()) {
-		 	$product[$i]['id'] = $row['id']; 
-		 	$product[$i]['name'] = $row['name'];
-		 	$product[$i]['code'] = $row['code'];
-		 	$product[$i]['price'] = $row['price'];
+				$product[$i]['id']    = $row['id']; 
+				$product[$i]['name']  = $row['name'];
+				$product[$i]['code']  = $row['code'];
+				$product[$i]['price'] = $row['price'];
 		 $i++; 
 		 } 
 	return $product; 
@@ -230,9 +230,9 @@ class Product
 
 		$i = 0; 
 		while($row = $stmt -> fetch()){
-			$productList[$i]['id'] = $row['id']; 
-			$productList[$i]['name'] = $row['name']; 
-			$productList[$i]['price'] = $row['price']; 
+			$productList[$i]['id']     = $row['id']; 
+			$productList[$i]['name']   = $row['name']; 
+			$productList[$i]['price']  = $row['price']; 
 			$productList[$i]['is_new'] = $row['is_new']; 
 		$i++; 
 		}
@@ -256,21 +256,28 @@ class Product
 
 		$i = 0; 
 		while($row = $stmt -> fetch()){
-			$productList[$i]['id'] = $row['id'];
-			$productList[$i]['name'] = $row['name'];
-			$productList[$i]['category_id'] = $row['category_id'];
-			$productList[$i]['code'] = $row['code'];
-			$productList[$i]['price'] = $row['price'];
-			$productList[$i]['availability'] = $row['availability'];
-			$productList[$i]['brand'] = $row['brand'];
-			$productList[$i]['image'] = $row['image'];
-			$productList[$i]['description'] = $row['description'];
-			$productList[$i]['is_new'] = $row['is_new'];
+			$productList[$i]['id']             = $row['id'];
+			$productList[$i]['name']           = $row['name'];
+			$productList[$i]['category_id']    = $row['category_id'];
+			$productList[$i]['code']           = $row['code'];
+			$productList[$i]['price']          = $row['price'];
+			$productList[$i]['availability']   = $row['availability'];
+			$productList[$i]['brand']          = $row['brand'];
+			$productList[$i]['image']          = $row['image'];
+			$productList[$i]['description']    = $row['description'];
+			$productList[$i]['is_new']         = $row['is_new'];
 			$productList[$i]['is_recommended'] = $row['is_recommended']; 
-			$productList[$i]['status'] = $row['status'];
+			$productList[$i]['status']         = $row['status'];
 		$i++; 
 		}
 	return $productList; 
+	}
+
+	/*******************************************************
+	// 
+	********************************************************/
+	public static function createProductForAdmin($options){
+		
 	}
 
 	/*******************************************************

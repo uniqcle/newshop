@@ -19,10 +19,10 @@ class Category
 		$i = 0; 
 
 		while($row = $stmt -> fetch()){
-			$categoryList[$i]['id'] = $row['id']; 
-			$categoryList[$i]['name'] = $row['name'];
+			$categoryList[$i]['id']         = $row['id']; 
+			$categoryList[$i]['name']       = $row['name'];
 			$categoryList[$i]['sort_order'] = $row['sort_order'];
-			$categoryList[$i]['status'] = $row['status'];
+			$categoryList[$i]['status']     = $row['status'];
 		$i++; 
 		}
 
@@ -45,10 +45,10 @@ class Category
 		$i = 0; 
 
 		while($row = $stmt -> fetch()){
-			$categoryList[$i]['id'] = $row['id']; 
-			$categoryList[$i]['name'] = $row['name'];
+			$categoryList[$i]['id']         = $row['id']; 
+			$categoryList[$i]['name']       = $row['name'];
 			$categoryList[$i]['sort_order'] = $row['sort_order'];
-			$categoryList[$i]['status'] = $row['status'];
+			$categoryList[$i]['status']     = $row['status'];
 		$i++; 
 		}
 

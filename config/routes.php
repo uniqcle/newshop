@@ -1,6 +1,6 @@
-<?php
-
-return array(
+	<?php
+	
+	return array(
 	
 	//Страница продукта
 	"product/([0-9]+)"                => "product/view/$1", 
@@ -51,7 +51,7 @@ return array(
 	
 	//Управление заказами в админке
 	"admin/orders"                    => "adminOrders/index",
-	"admin/orders/view"      => "adminOrders/view", 
+	"admin/orders/view"               => "adminOrders/view", 
 	"admin/orders/update"             => "adminOrders/update",
 	"admin/orders/delete"             => "adminOrders/delete",    
 	
@@ -63,4 +63,4 @@ return array(
 	//Главная страница и навигация по главной
 	"page-([0-9]+)"                   => "site/index/$1",
 	""                                => "site/index", 
-); 
+	); 

@@ -21,7 +21,6 @@
     <div class="col-sm-12">
        <div>
 
-
         <form action = "#" method = "POST" enctype = "multipart/form-data">
           <div class="form-group">
             <label for="nameProduct">Название товара</label>
