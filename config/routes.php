@@ -45,8 +45,8 @@
 	//Управление категориями в админке
 	
 	"admin/category/create"           => "adminCategory/create",
-	"admin/category/update"           => "adminCategory/update",
-	"admin/category/delete"           => "adminCategory/delete", 
+	"admin/category/update/([0-9]+)"  => "adminCategory/update/$1",
+	"admin/category/delete/([0-9]+)"  => "adminCategory/delete/$1", 
 	"admin/category"                  => "adminCategory/index",  
 	
 	//Управление заказами в админке

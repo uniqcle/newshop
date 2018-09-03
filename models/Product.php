@@ -98,7 +98,11 @@ class Product
 
 			$stmt = $pdo -> prepare($sql);
 
-			$stmt -> execute(array('categoryId' => $categoryId, 'countLimit' => $count, 'offset' => $offset ));  
+			$stmt -> execute(array(
+				'categoryId' => $categoryId, 
+				'countLimit' => $count, 
+				'offset'     => $offset 
+			));  
 
 			$productList = []; 
 			$i = 0; 
@@ -295,7 +299,6 @@ class Product
 			"is_new"         => $options['is_new'],
 			"is_recommended" => $options['is_recommended'],
 			"status" => $options['status'],
-
 		)); 
 
 		if($result){
@@ -304,6 +307,46 @@ class Product
 
 		return 0; 
 
+	}
+
+	/*******************************************************
+	// Обновление товара в админке
+	********************************************************/
+	public static function updateProductForAdmin($id, $options){
+
+		$pdo = DB::getConnect(); 
+
+		$sql = "UPDATE product 
+				SET 
+						name           = :name, 
+						category_id    = :category_id, 
+						code           = :code, 
+						price          = :price, 
+						availability   = :availability, 
+						brand          = :brand, 
+						description    = :description, 
+						is_new         = :is_new, 
+						is_recommended = :is_recommended, 
+						status         = :status
+   				WHERE id = :id"; 
+
+		$stmt = $pdo -> prepare($sql); 
+
+		$result = $stmt -> execute(array(
+			"id"             => $id, 
+			"name"           => $options['name'], 
+			"category_id"    => $options['category_id'],
+			"code"           => $options['code'],
+			"price"          => $options['price'],
+			"availability"   => $options['availability'],
+			"brand"          => $options['brand'],
+			"description"    => $options['description'],
+			"is_new"         => $options['is_new'],
+			"is_recommended" => $options['is_recommended'],
+			"status"         => $options['status'],
+		)); 
+
+		return $result; 
 	}
 
 	/*******************************************************

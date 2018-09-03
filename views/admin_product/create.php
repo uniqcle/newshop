@@ -99,11 +99,6 @@
             </select>
           </div>
  
-
-
-
-  <input type="submit" value="Send Request">
-
           <input type="submit" name="submit" class="btn btn-success" value="Сохранить"></br></br></br></br></br>
 
         </form>

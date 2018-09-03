@@ -9,38 +9,24 @@
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/admin/">Админ.панель</a></li>
         <li class="breadcrumb-item"><a href="/admin/category">Управление категорией</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Добавить</li>
+        <li class="breadcrumb-item active" aria-current="page">Удаление</li>
       </ol>
     </nav>
 
     <div class="row">
      <div class="col-sm-12">
-       <h5>Добавить новую категорию</h5>
+       <h5>Удаление категории</h5>
      </div>
 
      <div class="col-sm-12">
        <div>
 
         <form action = "#" method = "POST" enctype = "multipart/form-data">
-          <div class="form-group">
-            <label for="nameCategory">Название категории</label>
-            <input type="text" name = "name" class="form-control form-control-sm" id="nameCategory" placeholder="">
-          </div>
+          Вы действительно хотите удалить категорию?  <strong> <?php echo $category['name']; ?> </strong> </br>
 
-          <div class="form-group">
-            <label for="serialNum">Порядковый номер</label>
-            <input type="text" name = "sort_order" class="form-control form-control-sm" id="sort_order" placeholder="">
-          </div>
-
-          <div class="form-group">
-            <label for="showCategory">Отображать на сайте?</label>
-            <select name = "status" class="form-control form-control-sm" id="showCategory">
-              <option value= "1">Отображать</option>
-              <option value = "0">Не отображать</option>
-            </select>
-          </div>
-
-           <input type="submit" name="submit" class="btn btn-success" value="Сохранить"></br></br></br></br></br>
+        <form action = "#" method = "POST">
+          <input type = "submit" name = "submit" value = "Удалить" class = "btn btn-warning btn-sm">
+        </form>
 
         </form>
 

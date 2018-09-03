@@ -15,7 +15,7 @@
 
     <div class="row">
      <div class="col-sm-12">
-       <h5>Добавить новую категорию</h5>
+       <h5>Редактирование категории</h5>
      </div>
 
      <div class="col-sm-12">
@@ -24,19 +24,19 @@
         <form action = "#" method = "POST" enctype = "multipart/form-data">
           <div class="form-group">
             <label for="nameCategory">Название категории</label>
-            <input type="text" name = "name" class="form-control form-control-sm" id="nameCategory" placeholder="">
+            <input type="text" name = "name" class="form-control form-control-sm" id="nameCategory" value = "<?php echo $category['name']; ?>">
           </div>
 
           <div class="form-group">
             <label for="serialNum">Порядковый номер</label>
-            <input type="text" name = "sort_order" class="form-control form-control-sm" id="sort_order" placeholder="">
+            <input type="text" name = "sort_order" class="form-control form-control-sm" id="sort_order" value = "<?php echo $category['sort_order']; ?>">
           </div>
 
           <div class="form-group">
             <label for="showCategory">Отображать на сайте?</label>
             <select name = "status" class="form-control form-control-sm" id="showCategory">
-              <option value= "1">Отображать</option>
-              <option value = "0">Не отображать</option>
+              <option value= "1" <?php if($category['status'] == 1) echo "selected = 'selected'" ?> >Отображать</option>
+              <option value = "0" <?php if($category['status'] == 0) echo "selected = 'selected'"?>>Не отображать</option>
             </select>
           </div>
 

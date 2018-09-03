@@ -49,15 +49,50 @@ class AdminProductController extends AdminBase
 			$id = Product::createProductForAdmin($options); 
 
 			header("Location: /admin/product"); 		
-
-
 		}
 
 		require_once(ROOT.'/views/admin_product/create.php'); 
 		return true; 
 	}
 
-	
+	/*******************************************************
+	// 
+	********************************************************/
+	public function actionUpdate($id){
+		self::checkAdmin();
+
+		$categoryList = []; 
+
+		//Списко категорий для выпадающего списка
+		$categoryList = Category::getCategoryForAdmin(); 
+
+			//Вывод информации о товаре
+			$product = Product::getProductById($id); 
+			
+			//Если форма отправлена
+			if(isset($_POST['submit'])){
+
+			$options['name']           = $_POST['name']; 
+			$options['category_id']    = $_POST['category_id'];
+			$options['code']           = $_POST['code'];
+			$options['price']          = $_POST['price'];
+			$options['availability']   = $_POST['availability'];
+			$options['brand']          = $_POST['brand'];
+			$options['description']    = $_POST['description'];
+			$options['is_new']         = $_POST['is_new'];
+			$options['is_recommended'] = $_POST['is_recommended'];
+			$options['status']         = $_POST['status'];
+
+			if(Product::updateProductForAdmin($id, $options)){
+				//Загрузка изоббражения
+			}
+			header("Location: /admin/product"); 
+
+			}
+
+    	require_once(ROOT.'/views/admin_product/update.php'); 
+    return true; 
+	}
 
 	/*******************************************************
 	// Удаление товара из админки

@@ -31,34 +31,17 @@ require_once(ROOT.'/views/layouts/header_admin.php');
        			</tr>
        		</thead>
        		<tbody>
-       			
+       		
+          <?php foreach($categoryList as $item): ?>
        			<tr>
-       				<td>4</td>
-       				<td>Ноутбуки</td>
-       				<td>1</td>
-       				<td>Отображается</td>
-       				<td><a href = "#"><i class="far fa-edit"></i></a></td>
-       				<td><a href = "#"><i class="far fa-trash-alt"></i></a></td>
+       				<td><?php echo $item['id']; ?></td>
+       				<td><?php echo $item['name']; ?></td>
+       				<td><?php echo $item['sort_order']; ?></td>
+       				<td><?php echo Category::statusCategory($item['status']); ?></td>
+       				<td><a href = "/admin/category/update/<?php echo $item['id']; ?>"><i class="far fa-edit"></i></a></td>
+       				<td><a href = "/admin/category/delete/<?php echo $item['id']; ?>"><i class="far fa-trash-alt"></i></a></td>
        			</tr>
-       			<tr>
-       				<td>4</td>
-       				<td>Ноутбуки</td>
-       				<td>1</td>
-       				<td>Отображается</td>
-       				<td><a href = "#"><i class="far fa-edit"></i></a></td>
-       				<td><a href = "#"><i class="far fa-trash-alt"></i></a></td>
-       			</tr>
-
-       			<tr>
-       				<td>4</td>
-       				<td>Ноутбуки</td>
-       				<td>1</td>
-       				<td>Отображается</td>
-       				<td><a href = "#"><i class="far fa-edit"></i></a></td>
-       				<td><a href = "#"><i class="far fa-trash-alt"></i></a></td>
-       			</tr>
-
-       			
+      		<?php endforeach; ?>
        		</tbody>
        	</table>
 

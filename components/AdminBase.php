@@ -8,8 +8,10 @@ abstract class AdminBase{
 	public static function checkAdmin(){
 
 		$userId = User::checkLogged();
+
         // Получаем информацию о текущем пользователе
         $user = User::getUserById($userId);
+        
         // Если роль текущего пользователя "admin", пускаем его в админпанель
         if ($user['role'] == 'admin') {
             return true;
