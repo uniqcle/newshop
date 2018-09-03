@@ -115,6 +115,31 @@ class Category
 	}
 
 	/*******************************************************
+	// Редактирование категории в админ.панели
+	********************************************************/
+	public static function updateCategoryInAdmin($options){
+
+		$pdo = DB::getConnect(); 
+
+		$sql = "UPDATE category 
+				SET name = :name, 
+					sort_order = :sort_order, 
+					status = :status
+				WHERE id = :id"; 
+
+		$stmt = $pdo -> prepare($sql); 
+
+		$result = $stmt -> execute(array(
+			"id"         => $options['id'], 
+			"name"       => $options['name'],
+			"sort_order" => $options['sort_order'], 
+			"status"     => $options['status'] 
+		)); 
+
+		return $result; 
+	}
+
+	/*******************************************************
 	// Удаление категории
 	********************************************************/
 	public static function deleteCateogoryInAdmin($id){

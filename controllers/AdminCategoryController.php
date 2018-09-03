@@ -48,6 +48,18 @@ class AdminCategoryController extends AdminBase
 
 		$category = Category::getCategoryItemForAdmin($id); 
 
+		if(isset($_POST['submit'])){
+
+			$options['id'] = $id; 
+			$options['name'] = $_POST['name'];
+			$options['sort_order'] = $_POST['sort_order'];
+			$options['status'] = $_POST['status'];   
+
+			Category::updateCategoryInAdmin($options); 
+
+			header("Location: /admin/category"); 
+		}
+
 		require_once(ROOT.'/views/admin_category/update.php'); 
 
 	return true; 

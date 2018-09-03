@@ -22,7 +22,7 @@
        <div>
 
         <form action = "#" method = "POST" enctype = "multipart/form-data">
-          Вы действительно хотите удалить категорию?  <strong> <?php echo $category['name']; ?> </strong> </br>
+          Вы действительно хотите удалить категорию?  <?php echo $category['name']; ?> </br>
 
         <form action = "#" method = "POST">
           <input type = "submit" name = "submit" value = "Удалить" class = "btn btn-warning btn-sm">
