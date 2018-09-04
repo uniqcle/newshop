@@ -19,13 +19,12 @@ if($result){
     echo 'Заказ успешно оформлен. Мы вам перезвоним. '; 
 } else {  
 
-    if(isset($errors) && is_array($error)){
+    if(isset($errors) && is_array($errors)){
         foreach($errors as $error): 
             echo $error.'<br>'; 
         endforeach; 
     }
-
-    ?>
+?>
 
 <?php 
 echo 'Вы выбрали <strong>'.$countItems.'</strong> товар(ов) на сумму <strong>'.$totalPrice.'</strong>'.PHP_EOL; 

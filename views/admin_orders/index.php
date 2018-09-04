@@ -30,51 +30,19 @@ require_once(ROOT.'/views/layouts/header_admin.php');
             </tr>
           </thead>
           <tbody>
-
+          
+          <?php foreach($orderItems as $item): ?>
             <tr>
-              <td>45</td>
-              <td>Анучкин Андрей</td>
-              <td>8 913481232</td>
-              <td>26.08.2018</td>
-              <td>Новый</td>
-              <td><a href = "#"><i class="far fa-eye"></i></a></td>
-              <td><a href = "#"><i class="far fa-edit"></i></a></td>
-              <td><a href = "#"><i class="far fa-trash-alt"></i></a></td>
+              <td><?php echo $item['id']; ?></td>
+              <td><?php echo $item['user_name']; ?></td>
+              <td><?php echo $item['user_phone']; ?></td>
+              <td><?php echo $item['save_date']; ?></td>
+              <td><?php Order::getStatusOrder($item['status']); ?></td>
+              <td><a href = "/admin/orders/view/<?php echo $item['id']; ?>"><i class="far fa-eye"></i></a></td>
+              <td><a href = "/admin/orders/update/<?php echo $item['id']; ?>"><i class="far fa-edit"></i></a></td>
+              <td><a href = "/admin/orders/delete/<?php echo $item['id']; ?>"><i class="far fa-trash-alt"></i></a></td>
             </tr>
-
-            <tr>
-              <td>45</td>
-              <td>Анучкин Андрей</td>
-              <td>8 913481232</td>
-              <td>26.08.2018</td>
-              <td>Новый</td>
-              <td><a href = "#"><i class="far fa-eye"></i></a></td>
-              <td><a href = "#"><i class="far fa-edit"></i></a></td>
-              <td><a href = "#"><i class="far fa-trash-alt"></i></a></td>
-            </tr>
-
-            <tr>
-              <td>45</td>
-              <td>Анучкин Андрей</td>
-              <td>8 913481232</td>
-              <td>26.08.2018</td>
-              <td>Новый</td>
-              <td><a href = "#"><i class="far fa-eye"></i></a></td>
-              <td><a href = "#"><i class="far fa-edit"></i></a></td>
-              <td><a href = "#"><i class="far fa-trash-alt"></i></a></td>
-            </tr>
-
-
-            <tr>
-              <td>45</td>
-              <td>Анучкин Андрей</td>
-              <td>8 913481232</td>
-              <td>26.08.2018</td>
-              <td>Новый</td>
-              <td><a href = "#"><i class="far fa-eye"></i></a></td>
-              <td><a href = "#"><i class="far fa-edit"></i></a></td>
-              <td><a href = "#"><i class="far fa-trash-alt"></i></a></td>
-            </tr>
+          <?php endforeach; ?>
 
           </tbody>
         </table>

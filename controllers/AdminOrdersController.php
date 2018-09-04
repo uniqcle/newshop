@@ -3,14 +3,30 @@
 /*******************************************************
 // 
 ********************************************************/
-class AdminOrdersController
+class AdminOrdersController extends AdminBase
 {
+
 	/*******************************************************
 	// 
 	********************************************************/
 	public function actionIndex(){
 
+		self::checkAdmin(); 
+
+		$orderItems = Order::getOrderItems(); 
+
 		require_once(ROOT.'/views/admin_orders/index.php'); 
+	return true; 
+	}
+
+	/*******************************************************
+	// 
+	********************************************************/
+	public function actionView($id){
+
+
+
+		require_once(ROOT.'/views/admin_orders/view.php'); 
 	return true; 
 	}
 
@@ -26,11 +42,19 @@ class AdminOrdersController
 	/*******************************************************
 	// 
 	********************************************************/
-	public function actionView(){
+	public function actionDelete($id){
 
-		require_once(ROOT.'/views/admin_orders/view.php'); 
+		Order::getOrderById($id); 
+
+		if(isset($_POST['submit'])){
+
+		}
+		require_once(ROOT.'/views/admin_orders/delete.php'); 
+
 	return true; 
 	}
+
+
 
 
 }

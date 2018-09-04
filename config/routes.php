@@ -36,31 +36,29 @@
 	"cabinet"                         => "cabinet/index",
 	
 	//Управление товарами в админке
-	
 	"admin/product/create"            => "adminProduct/create",
 	"admin/product/update/([0-9]+)"   => "adminProduct/update/$1", 
 	"admin/product/delete/([0-9]+)"   => "adminProduct/delete/$1", 
 	"admin/product"                   => "adminProduct/index",
 	
 	//Управление категориями в админке
-	
-	"admin/category/create"           => "adminCategory/create",
-	"admin/category/update/([0-9]+)"  => "adminCategory/update/$1",
-	"admin/category/delete/([0-9]+)"  => "adminCategory/delete/$1", 
-	"admin/category"                  => "adminCategory/index",  
+	"admin/category/create"          => "adminCategory/create",
+	"admin/category/update/([0-9]+)" => "adminCategory/update/$1",
+	"admin/category/delete/([0-9]+)" => "adminCategory/delete/$1", 
+	"admin/category"                 => "adminCategory/index",  
 	
 	//Управление заказами в админке
-	"admin/orders"                    => "adminOrders/index",
-	"admin/orders/view"               => "adminOrders/view", 
-	"admin/orders/update"             => "adminOrders/update",
-	"admin/orders/delete"             => "adminOrders/delete",    
+	"admin/orders/view/([0-9]+)"     => "adminOrders/view/$1", 
+	"admin/orders/update/([0-9]+)"   => "adminOrders/update/$1",
+	"admin/orders/delete/([0-9]+)"   => "adminOrders/delete/$1",  
+	"admin/orders"                   => "adminOrders/index",  
 	
 	//Админ-панель
-	"admin/cabinet"                   => "admin/cabinet",
-	"admin/logout"                    => "admin/logout", 
-	"admin"                           => "admin/index", 
+	"admin/cabinet"                  => "admin/cabinet",
+	"admin/logout"                   => "admin/logout", 
+	"admin"                          => "admin/index", 
 	
 	//Главная страница и навигация по главной
-	"page-([0-9]+)"                   => "site/index/$1",
-	""                                => "site/index", 
+	"page-([0-9]+)"                  => "site/index/$1",
+	""                               => "site/index", 
 	); 

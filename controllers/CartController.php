@@ -67,8 +67,8 @@
 
             //Форма отправлена?
             if(isset($_POST['submit'])){ //Форма отправлена? - ДА
-                $userName = $_POST['name']; 
-                $userPhone = $_POST['phone']; 
+                $userName    = $_POST['name']; 
+                $userPhone   = $_POST['phone']; 
                 $userComment = $_POST['comment']; 
 
                 $errors = false; 
@@ -113,15 +113,15 @@
                 if($productsInCart){  //В корзине есть товары? - Да
                     //Подводим предварительный итог (кол-во, сумма)
                     $productIds = array_keys($productsInCart);
-                    $products = Product::getProductByIds($productIds); 
+                    $products   = Product::getProductByIds($productIds); 
                     $countItems = Cart::countItemsInCart(); 
                     $totalPrice = Cart::totalPrice($products); 
 
                         //Пользователь залогинен? 
                         if(!User::isGuest()){ //Пользователь залогинен? - Да
                             //Получаем данные пользователя (id, name)
-                            $userId = User::checkLogged(); 
-                            $user = User::getUserById($userId); 
+                            $userId   = User::checkLogged(); 
+                            $user     = User::getUserById($userId); 
                             $userName = $user['name']; 
 
                         } else { //Пользователь залогинен? - нет
