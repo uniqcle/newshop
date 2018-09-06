@@ -8,7 +8,7 @@ require_once(ROOT.'/views/layouts/header_admin.php');
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="/admin/cabinet">Админ.панель</a></li>
-        <li class="breadcrumb-item"><a href="/admin/product">Управление товаром</a></li>
+        <li class="breadcrumb-item"><a href="/admin/product">Управление заказом</a></li>
         <li class="breadcrumb-item active" aria-current="page">Удаление</li>
       </ol>
     </nav>
@@ -18,7 +18,7 @@ require_once(ROOT.'/views/layouts/header_admin.php');
 
      <div class="col-sm-12">
        <div>
-        Вы действительно хотите удалить товар? <strong> <?php echo $productItem['name'];  ?> </strong></br>
+        Вы действительно хотите удалить заказ? <strong> <?php echo $orderItem['id'];  ?> </strong></br>
 
         <form action = "#" method = "POST">
           <input type = "submit" name = "submit" value = "Удалить" class = "btn btn-warning btn-sm">

@@ -6,7 +6,7 @@ require_once(ROOT.'/views/layouts/header_admin.php');
   <div class="container">
     <!-- Хлебные крошки --> 
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="/admin">Админ.панель</a></li>
+      <li class="breadcrumb-item"><a href="/admin/cabinet">Админ.панель</a></li>
       <li class="breadcrumb-item active" aria-current="page">Управление заказами</li>
     </ol>
     

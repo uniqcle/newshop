@@ -15,11 +15,13 @@ class Order
 		$stmt = $pdo -> prepare($sql);
 
 		$result = $stmt -> execute(array(
-			"user_name" => $userName,
-			"user_phone" => $userPhone,
+
+			"user_name"    => $userName,
+			"user_phone"   => $userPhone,
 			"user_comment" => $userComment,
-			"user_id" => $userId,
-			"products" => $products
+			"user_id"      => $userId,
+			"products"     => $products
+
 		));  
 
 		if($result){
@@ -27,7 +29,7 @@ class Order
 		} else return false; 
 	}
 	/*******************************************************
-	// 
+	// Получаем список заказов
 	********************************************************/
 	public static function getOrderItems(){
 
@@ -58,6 +60,34 @@ class Order
 	}
 
 	/*******************************************************
+	// Получение инфо о заказе по его ID
+	********************************************************/
+	public static function getOrderById($id){
+
+		$pdo = DB::getConnect(); 
+
+		$sql = "SELECT * FROM product_order WHERE id = ".$id; 
+
+		$stmt = $pdo -> query($sql); 
+
+		$orderItem = []; 
+
+		while($row = $stmt -> fetch()){
+
+			$orderItem['id']           = $row['id']; 
+			$orderItem['user_name']    = $row['user_name']; 
+			$orderItem['user_phone']   = $row['user_phone']; 
+			$orderItem['user_comment'] = $row['user_comment']; 
+			$orderItem['user_id']      = $row['user_id']; 
+			$orderItem['save_date']    = $row['save_date']; 
+			$orderItem['products']     = $row['products']; 
+			$orderItem['status']       = $row['status']; 
+		}
+
+	return $orderItem; 
+	}
+
+	/*******************************************************
 	// Получение списка статусов
 	********************************************************/
 	public static function getStatusOrder($status){
@@ -84,5 +114,50 @@ class Order
 			}
 
 		}
+	}
+
+	/*******************************************************
+	// Обновление заказа
+	********************************************************/
+	public static function updateOrder($options, $id){
+
+		$pdo = DB::getConnect(); 
+
+		$sql = "UPDATE product_order
+				SET 
+						user_name    = :user_name,
+						user_phone   = :user_phone,
+						user_comment = :user_comment, 
+						save_date    = :save_date, 
+						status       = :status
+				WHERE id = $id"; 
+
+		$stmt = $pdo -> prepare($sql); 
+
+		$result = $stmt -> execute(array(
+
+			"user_name"    => $options['user_name'],
+			"user_phone"   => $options['user_phone'],
+			"user_comment" => $options['user_comment'],
+			"save_date"    => $options['save_date'],
+			"status"       => $options['status'],
+			
+		)); 
+
+	return $result; 
+	}
+
+	/*******************************************************
+	// Удаление заказа
+	********************************************************/
+	public static function deleteOrder($id){
+
+		$pdo = DB::getConnect(); 
+
+		$sql = "DELETE FROM product_order WHERE id = :id"; 
+
+		$stmt = $pdo -> prepare($sql); 
+
+		return $stmt -> execute(array("id" => $id)); 
 	}
 }

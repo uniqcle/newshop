@@ -6,7 +6,7 @@
   <div class="container">
     <!-- Хлебные крошки --> 
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/admin/">Админ.панель</a></li>
+        <li class="breadcrumb-item"><a href="/admin/cabinet">Админ.панель</a></li>
         <li class="breadcrumb-item"><a href="/admin/orders">Управление заказами</a></li>
         <li class="breadcrumb-item active" aria-current="page">Информация о заказе</li>
       </ol>
@@ -24,29 +24,29 @@
           <tbody>
             <tr>
               <td>Номер заказа</td>
-              <td>323123</td>
+              <td><?php echo $orderItem['id']; ?></td>
             </tr>
             <tr>
               <td>Имя клиента</td>
-              <td>Jacob</td>
+              <td><?php echo $orderItem['user_name']; ?></td>
             </tr>
             <tr>
               <td>Телефон клиента</td>
-              <td >2 123123 132123</td>
+              <td ><?php echo $orderItem['user_phone']; ?></td>
             </tr>
             <tr>
               <td>Комментарий клиента</td>
-              <td > </td>
+              <td ><?php echo $orderItem['user_comment']; ?></td>
             </tr>
 
             <tr>
               <th>Статус заказа</th>
-              <td >В обработке</td>
+              <td ><?php Order::getStatusOrder($orderItem['status']); ?></td>
             </tr>
 
             <tr>
               <th>Дата заказа заказа</th>
-              <td >26.08.2018</td>
+              <td ><?php echo $orderItem['save_date']; ?></td>
             </tr>
           </tbody>
         </table>
@@ -69,39 +69,16 @@
           </tr>
         </thead>
         <tbody>
-
+        
+        <?php foreach($products as $product): ?>
           <tr>
-            <td>23</td>
-            <td>323123</td>
-            <td>Компьютер Everest Game </td>
-            <td>56.23</td>
-            <td>15</td>
+            <td><?php echo $product['id']; ?></td>
+            <td><?php echo $product['code']; ?></td>
+            <td><?php echo $product['name']; ?></td>
+            <td><?php echo $product['price']; ?></td>
+            <td></td>
           </tr>
-
-          <tr>
-            <td>23</td>
-            <td>323123</td>
-            <td>Компьютер Everest Game </td>
-            <td>56.23</td>
-            <td>15</td>
-          </tr>
-
-          <tr>
-            <td>23</td>
-            <td>323123</td>
-            <td>Компьютер Everest Game </td>
-            <td>56.23</td>
-            <td>15</td>
-          </tr>
-
-          <tr>
-            <td>23</td>
-            <td>323123</td>
-            <td>Компьютер Everest Game </td>
-            <td>56.23</td>
-            <td>15</td>
-          </tr>
-
+        <?php endforeach; ?>
 
 
         </tbody>

@@ -7,7 +7,7 @@
     <!-- Хлебные крошки --> 
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/admin/">Админ.панель</a></li>
+        <li class="breadcrumb-item"><a href="/admin/cabinet">Админ.панель</a></li>
         <li class="breadcrumb-item"><a href="/admin/category">Управление категорией</a></li>
         <li class="breadcrumb-item active" aria-current="page">Добавить</li>
       </ol>
