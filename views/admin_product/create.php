@@ -50,12 +50,12 @@
             </select>
           </div>
 
-                    <div class="form-group">
+          <div class="form-group">
             <label for="manufacture">Производитель</label>
             <input type="text" name= "brand" class="form-control form-control-sm" id="manufacture" placeholder="">
           </div>
 
-                    <form>
+            
             <div class="form-group">
               <label for="imageProduct">Изображение товара</label>
               <input type="file" name = "image" class="form-control-file form-control-sm" id="imageProduct">

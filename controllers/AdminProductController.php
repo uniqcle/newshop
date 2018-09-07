@@ -48,6 +48,16 @@ class AdminProductController extends AdminBase
 
 			$id = Product::createProductForAdmin($options); 
 
+			//Если запись добавлена
+				if($id){
+		 
+				//Проверяем загрузился ли файл.
+				if(is_uploaded_file($_FILES['image']['tmp_name'])){
+					//Перемещаем
+					move_uploaded_file($_FILES['image']['tmp_name'], $_SERVER['DOCUMENT_ROOT']."/uploads/images/products/{$id}.jpg" ); 
+				}
+			} 
+
 			header("Location: /admin/product"); 		
 		}
 
@@ -83,8 +93,16 @@ class AdminProductController extends AdminBase
 			$options['is_recommended'] = $_POST['is_recommended'];
 			$options['status']         = $_POST['status'];
 
+
 			if(Product::updateProductForAdmin($id, $options)){
-				//Загрузка изоббражения
+				//Если запись сохранена
+				//Проверим загрузился ли файл через форму
+				if(is_uploaded_file($_FILES['image']['tmp_name'])){
+
+				//Если загрузился, то сохраняем в нужную папку и даем имя новое
+				move_uploaded_file($_FILES['image']['tmp_name'], $_SERVER['DOCUMENT_ROOT']."/uploads/images/products/{$id}.jpg" ); 
+
+				}
 			}
 			header("Location: /admin/product"); 
 

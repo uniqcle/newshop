@@ -159,6 +159,24 @@ class Product
 	}
 
 	/*******************************************************
+	// Получаем изображение для админки
+	********************************************************/
+	public static function getImage($id){
+
+		$noImage = 'no_image.jpeg';
+
+		$path = '/uploads/images/products/'; 
+
+		$pathToProduct = $path.$id.'.jpg'; 
+
+		if(file_exists($_SERVER['DOCUMENT_ROOT'].$pathToProduct)){
+			return $pathToProduct; 
+		}
+
+		return $path.$noImage; 
+	}
+
+	/*******************************************************
 	// Get Product Count in Catalog
 	********************************************************/	
 	public static function getProductCountInCatalog(){
@@ -298,7 +316,7 @@ class Product
 			"description"    => $options['description'],
 			"is_new"         => $options['is_new'],
 			"is_recommended" => $options['is_recommended'],
-			"status" => $options['status'],
+			"status"         => $options['status'],
 		)); 
 
 		if($result){

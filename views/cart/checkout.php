@@ -27,7 +27,7 @@ if($result){
 ?>
 
 <?php 
-echo 'Вы выбрали <strong>'.$countItems.'</strong> товар(ов) на сумму <strong>'.$totalPrice.'</strong>'.PHP_EOL; 
+//echo 'Вы выбрали <strong>'.$countItems.'</strong> товар(ов) на сумму <strong>'.$totalPrice.'</strong>'.PHP_EOL; 
 echo '<br/>'.'<br/>'; 
 ?>
                         <form action="#" method = "POST" class = "form">

@@ -60,7 +60,8 @@
 
                     <form>
             <div class="form-group">
-              <label for="imageProduct">Изображение товара</label>
+              <label for="imageProduct"></label>
+              <img src = "<?php echo Product::getImage($product['id']);?>" width = "200" height = "150"> 
               <input type="file" name = "image" class="form-control-file form-control-sm" id="imageProduct">
             </div>
 
