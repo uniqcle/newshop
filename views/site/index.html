@@ -22,7 +22,7 @@
 
                                         <div class="productinfo text-center">
                                          <a href = "/product/<?php echo $productItem['id']; ?>">   
-                                            <img src="/template/images/home/product1.jpg" alt="" />
+                                            <img src="<?php echo Product::getImage($productItem['id']);?>" alt="" />
                                          </a>
                                          <h2>$<?php echo $productItem['price']; ?></h2>
                                             <p>

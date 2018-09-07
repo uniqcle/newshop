@@ -163,7 +163,7 @@ class Product
 	********************************************************/
 	public static function getImage($id){
 
-		$noImage = 'no_image.jpeg';
+		$noImage = 'no_image.jpg';
 
 		$path = '/uploads/images/products/'; 
 
